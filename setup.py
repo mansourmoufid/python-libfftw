@@ -42,6 +42,6 @@ if __name__ == '__main__':
         name='LibFFTW',
         packages=['libfftw'],
         scripts=[],
-        url='https://github.com/eliteraspberries/libfftw',
+        url='https://github.com/eliteraspberries/python-libfftw',
         **_metadata
     )
