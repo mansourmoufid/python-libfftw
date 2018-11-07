@@ -1,32 +1,9 @@
 #!/usr/bin/env python
 
 import ctypes
-import distutils.sysconfig
 import numpy
-import os
-import subprocess
 
-
-libdirs = []
-libdir = os.environ.get('FFTW_LIBDIR')
-if libdir is not None:
-    libdirs.append(libdir)
-try:
-    output = subprocess.check_output(
-        ['pkg-config', '--variable=libdir', 'fftw3f']
-    )
-    libdir = output.rstrip()
-    libdirs.append(libdir)
-except:
-    pass
-libdir = distutils.sysconfig.get_config_var('LIBDIR')
-if libdir is not None:
-    libdirs.append(libdir)
-names = ['libfftw3f.so', 'libfftw3f.dylib', 'libfftw3f-3.dll']
-for lib in [os.path.join(x, y) for x in libdirs for y in names]:
-    if os.path.exists(lib):
-        break
-libfftwf = ctypes.cdll.LoadLibrary(lib)
+from . import libfftwf
 
 
 FFTW_BACKWARD = 1
