@@ -1,5 +1,13 @@
 LibFFTW is a Python ctypes wrapper for the FFTW library.
 
+LibFFTW supports single-precision, one-dimensional DFTs.
+
+
+|                 | Single-precision (float) | Double-precision (double) |
+| --------------- | ------------------------ | ------------------------- |
+| One-dimensional |           Yes            |             No            |
+| Two-dimensional |           Soon           |             No            |
+
 
 ## Requirements
 
